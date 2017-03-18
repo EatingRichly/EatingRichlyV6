@@ -32,5 +32,8 @@ function kale_get_option($key){
 }
 
 //Change thumbnail to 2:3
-    set_post_thumbnail_size( 400, 600, true );
-add_image_size( 'kale-thumbnail', 400, 600, true );
+function kale_child_setup() {
+  set_post_thumbnail_size( 400, 600, true );
+  add_image_size( ‘kale-thumbnail’, 400, 600, true );
+}
+add_action( 'after_setup_theme', 'kale_child_setup' );
