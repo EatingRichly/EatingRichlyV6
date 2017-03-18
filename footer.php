@@ -5,6 +5,11 @@
 * @package kale
 */
 ?>
+
+<?php if(is_front_page() && !is_paged() ) { 
+    get_template_part('parts/frontpage', 'large'); 
+    get_template_part('parts/frontpage', 'vertical'); 
+} ?>
         <?php get_sidebar('footer'); ?>
 
         <!-- Footer -->
