@@ -31,3 +31,9 @@ Updated: 2017-03-27 12:44:48
 .entry-title a {
   line-height: 18px;
 }
+
+/* Easy Azon list blocks like a table */
+.easyazon-block {
+  display: inline-block !important;
+  width: 240px;
+}
