@@ -38,3 +38,11 @@ function kale_child_setup() {
   add_image_size( 'kale-vertical', 400, 600, true );
 }
 add_action( 'after_setup_theme', 'kale_child_setup', 15 );
+
+// Disable lazy load on amp pages
+function bjll_compat_amp() {
+  if ( function_exists( 'is_amp_endpoint' ) && is_amp_endpoint() ) {
+      add_filter( 'bjll/enabled', '__return_false' );
+  }
+}
+add_action( 'bjll/compat', 'bjll_compat_amp' );
