@@ -6,10 +6,25 @@
 */
 ?>
 
-<?php if(is_front_page() && !is_paged() ) {
-  get_template_part('parts/frontpage', 'large');
-  get_template_part('parts/frontpage', 'vertical');
-} ?>
+<?php
+if(is_front_page() && !is_paged() ) {
+    $kale_frontpage_order = kale_get_option('kale_frontpage_order');
+    if ( ! empty( $kale_frontpage_order ) && is_array( $kale_frontpage_order ) ) {
+
+        $key = array_search('kale_frontpage_order_feed', $kale_frontpage_order);
+        $after_feed = array_slice($kale_frontpage_order, $key);
+
+        foreach($after_feed as $section){
+            switch($section){
+                case 'kale_frontpage_order_banner':             get_template_part('parts/frontpage', 'banner');  break;
+                case 'kale_frontpage_order_featured_posts':     get_template_part('parts/frontpage', 'featured');  break;
+                case 'kale_frontpage_order_large':              get_template_part('parts/frontpage', 'large');  break;
+                case 'kale_frontpage_order_vertical':           get_template_part('parts/frontpage', 'vertical');  break;
+            }
+        }
+    }
+}
+?>
   <?php get_sidebar('footer'); ?>
 
   <!-- Footer -->
