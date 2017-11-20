@@ -6,13 +6,13 @@ Author: Eric Johnson
 Author URI: https://twitter.com/wormeyman
 Description: Eating Richly V6
 Tags: one-column,two-columns,three-columns,right-sidebar,grid-layout,flexible-header,custom-background,custom-colors,custom-header,custom-menu,featured-images,footer-widgets,full-width-template,theme-options,threaded-comments,translation-ready,food-and-drink
-Version: 6.3.1
-Updated: 2017-10-26 16:09:09
+Version: 6.4.1
+Updated: 2017-11-20 12:58:17
 */
 /*Wired Style Links*/
 /*https://wordpress.org/support/topic/how-to-change-color-of-links-inside-post-only*/
 /*http://codepen.io/pirrera/pen/emKqBp*/
-
+.entry-title a,
 .single .entry-content p a,
 .single .entry-content h1 a,
 .single .entry-content h2 a,
