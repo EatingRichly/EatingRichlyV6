@@ -45,3 +45,15 @@ function bjll_compat_amp() {
   }
 }
 add_action( 'bjll/compat', 'bjll_compat_amp' );
+
+// Alert on Staging Site
+/*http://stackoverflow.com/questions/6522023/php-if-domain*/
+$host = $_SERVER['HTTP_HOST'];
+if ($host === 'eatingrichly-staging.lcdoxnf7-liquidwebsites.com') {
+    function staging_admin_error_notice() {
+        $class = "error";
+        $message = "You are on the staging site.";
+            echo"<div class=\"$class\"> <h1>$message</h1></div>";
+    }
+    add_action( 'admin_notices', 'staging_admin_error_notice' );
+}
