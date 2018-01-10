@@ -6,8 +6,8 @@ Author: Eric Johnson
 Author URI: https://twitter.com/wormeyman
 Description: Eating Richly V6
 Tags: one-column,two-columns,three-columns,right-sidebar,grid-layout,flexible-header,custom-background,custom-colors,custom-header,custom-menu,featured-images,footer-widgets,full-width-template,theme-options,threaded-comments,translation-ready,food-and-drink
-Version: 6.4.1
-Updated: 2017-11-20 12:58:17
+Version: 6.4.2
+Updated: 2018-01-10 13:45:22
 */
 /*Wired Style Links*/
 /*https://wordpress.org/support/topic/how-to-change-color-of-links-inside-post-only*/
@@ -24,7 +24,7 @@ Updated: 2017-11-20 12:58:17
   border-bottom: 2px solid #ef8b80;
   /*box-shadow: inset 0 -4px 0 #ef8b80;*/
   color: inherit;
-  transition: background 0.1s cubic-bezier(.33, .66, .66, 1);
+  transition: background 0.1s cubic-bezier(0.33, 0.66, 0.66, 1);
 }
 
 .entry-content a:hover {
@@ -37,7 +37,7 @@ Updated: 2017-11-20 12:58:17
 
 /* Easy Azon list blocks like a table */
 .easyazon-block {
-  display: inline-block!important;
+  display: inline-block !important;
   width: 240px;
   min-height: 450px;
   vertical-align: top;
