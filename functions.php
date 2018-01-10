@@ -52,7 +52,7 @@ add_action('bjll/compat', 'bjll_compat_amp');
 // Alert on Staging Site
 /*http://stackoverflow.com/questions/6522023/php-if-domain*/
 $host = $_SERVER['HTTP_HOST'];
-if ($host === 'eatingrichly-staging.lcdoxnf7-liquidwebsites.com') {
+if ($host === 'staging-eatingrichly.kinsta.com') {
     function staging_admin_error_notice()
     {
         $class = "error";
