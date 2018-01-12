@@ -50,9 +50,9 @@ function bjll_compat_amp()
 add_action('bjll/compat', 'bjll_compat_amp');
 
 // Alert on Staging Site
-/*http://stackoverflow.com/questions/6522023/php-if-domain*/
+// http://stackoverflow.com/questions/6522023/php-if-domain
 $host = $_SERVER['HTTP_HOST'];
-if ($host === 'staging-eatingrichly.kinsta.com') {
+if ($host != 'eatingrichly.com') {
     function staging_admin_error_notice()
     {
         $class = "error";
@@ -61,3 +61,11 @@ if ($host === 'staging-eatingrichly.kinsta.com') {
     }
     add_action('admin_notices', 'staging_admin_error_notice');
 }
+
+// Set max srcset image width
+function remove_max_srcset_image_width($max_width)
+{
+    $max_width = 1200;
+    return $max_width;
+}
+add_filter('max_srcset_image_width', 'remove_max_srcset_image_width');
