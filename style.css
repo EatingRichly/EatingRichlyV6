@@ -57,3 +57,7 @@ Updated: 2018-01-12 12:17:24
     left: 0;
   }
 }
+/* Hide Comment Form URL */
+.form-group-url {
+  display: none;
+}
