@@ -19,7 +19,8 @@ Updated: 2018-01-12 12:17:24
 .single .entry-content h3 a,
 .single .entry-content h4 a,
 .single .entry-content h5 a,
-.single .entry-content h6 a {
+.single .entry-content h6 a, 
+.entry-content li a {
   text-decoration: none;
   border-bottom: 2px solid #ef8b80;
   /*box-shadow: inset 0 -4px 0 #ef8b80;*/
