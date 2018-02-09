@@ -4,8 +4,14 @@
 add_action('wp_enqueue_scripts', 'kale_child_enqueue_styles');
 function kale_child_enqueue_styles()
 {
+    wp_dequeue_style('font-awesome');
+    wp_deregister_style('font-awesome');
+
+    wp_dequeue_style('owl-carousel');
+    wp_deregister_style('owl-carousel');
+
     $parent_style = 'kale-style';
-    $deps = array('bootstrap', 'bootstrap-select', 'font-awesome', 'owl-carousel');
+    $deps = array('bootstrap', 'bootstrap-select'/* , 'font-awesome', 'owl-carousel' */);
     wp_enqueue_style($parent_style, get_template_directory_uri() . '/style.css', $deps);
 
     wp_enqueue_style('kale-style-child', get_stylesheet_directory_uri() . '/style.css', array( $parent_style ), wp_get_theme()->get('Version'));
@@ -69,3 +75,20 @@ function remove_max_srcset_image_width($max_width)
     return $max_width;
 }
 add_filter('max_srcset_image_width', 'remove_max_srcset_image_width');
+
+// Dequeue the Parent Theme scripts.
+function eating_richly_WI_dequeue_script()
+{
+    wp_dequeue_script('owl-carousel');
+    wp_dequeue_script('font-awesome');
+    wp_dequeue_script('kirki-fontawesome-font');
+}
+
+add_action('wp_print_scripts', 'eating_richly_WI_dequeue_script', 100);
+
+// empty function to override owl-carousel insert from parent functions
+    function kale_slider()
+    {
+        // This function is intentionally left blank.
+    }
+    add_action('wp_enqueue_scripts', 'kale_slider', 15);
