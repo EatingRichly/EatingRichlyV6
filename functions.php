@@ -31,7 +31,7 @@ function kale_get_option($key)
         $value = $child_value;
     } elseif (!empty($parent_theme_mods) && isset($parent_theme_mods[$key])) {
         $value = $parent_theme_mods[$key];
-    } elseif (array_key_exists($key, $kale_defaults)) {
+    } elseif (is_array($kale_defaults) && array_key_exists($key, $kale_defaults)) {
         $value = get_theme_mod($key, $kale_defaults[$key]);
     }
     return $value;
