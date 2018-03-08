@@ -6,13 +6,14 @@ Author: Eric Johnson
 Author URI: https://twitter.com/wormeyman
 Description: Eating Richly V6
 Tags: one-column,two-columns,three-columns,right-sidebar,grid-layout,flexible-header,custom-background,custom-colors,custom-header,custom-menu,featured-images,footer-widgets,full-width-template,theme-options,threaded-comments,translation-ready,food-and-drink
-Version: 6.4.8
-Updated: 2018-03-02 09:54:11
+Version: 6.4.9
+Updated: 2018-03-08 15:31:49
 */
-/*Wired Style Links*/
-/*https://wordpress.org/support/topic/how-to-change-color-of-links-inside-post-only*/
-/*http://codepen.io/pirrera/pen/emKqBp*/
+/* Wired Style Links */
+/* https://wordpress.org/support/topic/how-to-change-color-of-links-inside-post-only */
+/* http://codepen.io/pirrera/pen/emKqBp */
 .entry-title a,
+.page-content p a,
 .single .entry-content p a,
 .single .entry-content h1 a,
 .single .entry-content h2 a,
@@ -28,10 +29,11 @@ Updated: 2018-03-02 09:54:11
   transition: background 0.1s cubic-bezier(0.33, 0.66, 0.66, 1);
 }
 
-.entry-content a:hover {
+.entry-content a:hover,
+.page-content a:hover {
   background: #ef8b80;
 }
-
+/* End Wired Style Links */
 .entry-title a {
   line-height: 18px;
 }
@@ -111,6 +113,7 @@ Updated: 2018-03-02 09:54:11
   content: "\002315";
   font-size: 2em;
 }
+/* End Font Awesome Replacements */
 /* Show menu after page load */
 #main_menu {
   display: inherit;
