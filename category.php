@@ -1,6 +1,8 @@
 <?php
 /**
 * The category template file.
+* EATING RICHLY
+* 2018-07-11 09:33:06
 *
 * @package kale
 */
