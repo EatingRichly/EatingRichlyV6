@@ -8,7 +8,6 @@
  */
 ?>
 <?php
-
 $kale_frontpage_vertical_show = kale_get_option('kale_frontpage_vertical_show');
 if ($kale_frontpage_vertical_show == 1) {
     $kale_frontpage_vertical_heading = kale_get_option('kale_frontpage_vertical_heading');
