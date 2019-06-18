@@ -2,7 +2,7 @@
 /**
 * The category template file.
 * EATING RICHLY
-* 2018-07-11 09:33:06
+* 2019-06-18 14:39:47
 *
 * @package kale
 */
