@@ -92,3 +92,6 @@ add_action('wp_print_scripts', 'eating_richly_WI_dequeue_script', 100);
         // This function is intentionally left blank.
     }
     add_action('wp_enqueue_scripts', 'kale_slider', 15);
+
+// Google native lazy load do not load JS
+  add_filter( 'native_lazyload_fallback_script_enabled', '__return_false' );
