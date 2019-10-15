@@ -11,10 +11,22 @@ function kale_child_enqueue_styles()
     wp_deregister_style('owl-carousel');
 
     $parent_style = 'kale-style';
-    $deps = array('bootstrap', 'bootstrap-select'/* , 'font-awesome', 'owl-carousel' */);
-    wp_enqueue_style($parent_style, get_template_directory_uri() . '/style.css', $deps);
+    $deps = array(
+        'bootstrap',
+        'bootstrap-select' /* , 'font-awesome', 'owl-carousel' */
+    );
+    wp_enqueue_style(
+        $parent_style,
+        get_template_directory_uri() . '/style.css',
+        $deps
+    );
 
-    wp_enqueue_style('kale-style-child', get_stylesheet_directory_uri() . '/style.css', array( $parent_style ), wp_get_theme()->get('Version'));
+    wp_enqueue_style(
+        'kale-style-child',
+        get_stylesheet_directory_uri() . '/style.css',
+        array($parent_style),
+        wp_get_theme()->get('Version')
+    );
 }
 
 function kale_get_option($key)
@@ -31,7 +43,10 @@ function kale_get_option($key)
         $value = $child_value;
     } elseif (!empty($parent_theme_mods) && isset($parent_theme_mods[$key])) {
         $value = $parent_theme_mods[$key];
-    } elseif (is_array($kale_defaults) && array_key_exists($key, $kale_defaults)) {
+    } elseif (
+        is_array($kale_defaults) &&
+        array_key_exists($key, $kale_defaults)
+    ) {
         $value = get_theme_mod($key, $kale_defaults[$key]);
     }
     return $value;
@@ -63,7 +78,7 @@ if ($host != 'eatingrichly.com') {
     {
         $class = "error";
         $message = "You are on the staging site.";
-        echo"<div class=\"$class\"> <h1>$message</h1></div>";
+        echo "<div class=\"$class\"> <h1>$message</h1></div>";
     }
     add_action('admin_notices', 'staging_admin_error_notice');
 }
@@ -87,11 +102,11 @@ function eating_richly_WI_dequeue_script()
 add_action('wp_print_scripts', 'eating_richly_WI_dequeue_script', 100);
 
 // empty function to override owl-carousel insert from parent functions
-    function kale_slider()
-    {
-        // This function is intentionally left blank.
-    }
-    add_action('wp_enqueue_scripts', 'kale_slider', 15);
+function kale_slider()
+{
+    // This function is intentionally left blank.
+}
+add_action('wp_enqueue_scripts', 'kale_slider', 15);
 
 // Google native lazy load do not load JS
-  add_filter( 'native_lazyload_fallback_script_enabled', '__return_false' );
+add_filter('native_lazyload_fallback_script_enabled', '__return_false');
