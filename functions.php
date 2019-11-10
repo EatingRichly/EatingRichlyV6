@@ -94,9 +94,10 @@ add_filter('max_srcset_image_width', 'remove_max_srcset_image_width');
 // Dequeue the Parent Theme scripts.
 function eating_richly_WI_dequeue_script()
 {
-    wp_dequeue_script('owl-carousel');
-    wp_dequeue_script('font-awesome');
-    wp_dequeue_script('kirki-fontawesome-font');
+    wp_dequeue_script('owl-carousel');            // remove kale scripts
+    wp_dequeue_script('font-awesome');            // remove kale scripts
+    wp_dequeue_script('kirki-fontawesome-font');  // remove kale scripts
+    wp_dequeue_script( 'devicepx' );              // Remove jetpack js
 }
 
 add_action('wp_print_scripts', 'eating_richly_WI_dequeue_script', 100);
