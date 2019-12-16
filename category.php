@@ -11,7 +11,7 @@
 
 <?php
 $kale_blog_feed_category_sidebar_show = kale_get_option(
-    'kale_blog_feed_category_sidebar_show'
+  'kale_blog_feed_category_sidebar_show'
 );
 if ($kale_blog_feed_category_sidebar_show == 0) { ?>
 
@@ -19,10 +19,10 @@ if ($kale_blog_feed_category_sidebar_show == 0) { ?>
 <div class="full-width-category">
   <h1 class="block-title"><span><?php single_cat_title(); ?></span></h1>
   <?php
-    /* https://yoast.com/wordpress-archive-pages/ */
-    ?>
+  /* https://yoast.com/wordpress-archive-pages/ */
+  ?>
   <h2 class="block-title"><span><?php if (!is_paged()) {
-      echo wpautop(term_description());
+    echo wpautop(term_description());
   } ?></span></h2>
 
   <!-- Blog Feed -->
@@ -31,8 +31,8 @@ if ($kale_blog_feed_category_sidebar_show == 0) { ?>
     $kale_i = 0;
     $kale_ad = 0;
     if (have_posts()) {
-        while (have_posts()):
-            the_post(); ?>
+      while (have_posts()):
+        the_post(); ?>
     <?php if ($kale_i % 3 == 0) { ?>
     <div class="row" data-fluid=".entry-title"><?php } ?>
       <div class="col-md-4"><?php
@@ -44,7 +44,7 @@ if ($kale_blog_feed_category_sidebar_show == 0) { ?>
       <?php if ($kale_i % 3 == 0) { ?>
     </div><?php } ?>
     <?php
-        endwhile;
+      endwhile;
     }
     ?>
 
@@ -55,12 +55,12 @@ if ($kale_blog_feed_category_sidebar_show == 0) { ?>
   <div class="pagination-blog-feed">
     <?php if (get_next_posts_link()) { ?>
     <div class="previous_posts"><?php next_posts_link(
-        __('Previous Posts', 'kale')
+      __('Previous Posts', 'kale')
     ); ?>
     </div><?php } ?>
     <?php if (get_previous_posts_link()) { ?>
     <div class="next_posts"><?php previous_posts_link(
-        __('Next Posts', 'kale')
+      __('Next Posts', 'kale')
     ); ?>
     </div><?php } ?>
   </div>
