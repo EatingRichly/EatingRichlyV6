@@ -2,7 +2,7 @@
 /**
 * The category template file.
 * EATING RICHLY
-* 2019-06-18 14:39:47
+* 2019-12-16 14:26:41
 *
 * @package kale
 */
@@ -11,18 +11,22 @@
 
 <?php
 $kale_blog_feed_category_sidebar_show = kale_get_option(
-  'kale_blog_feed_category_sidebar_show'
+    'kale_blog_feed_category_sidebar_show'
 );
 if ($kale_blog_feed_category_sidebar_show == 0) { ?>
 
 <!-- Full Width Category -->
 <div class="full-width-category">
   <h1 class="block-title"><span><?php single_cat_title(); ?></span></h1>
+  <?php the_archive_description(
+        '<div class="archive-description">',
+        '</div>'
+    ); ?>
   <?php
-  /* https://yoast.com/wordpress-archive-pages/ */
-  ?>
+    /* https://yoast.com/wordpress-archive-pages/ */
+    ?>
   <h2 class="block-title"><span><?php if (!is_paged()) {
-    echo wpautop(term_description());
+      echo wpautop(term_description());
   } ?></span></h2>
 
   <!-- Blog Feed -->
@@ -31,20 +35,20 @@ if ($kale_blog_feed_category_sidebar_show == 0) { ?>
     $kale_i = 0;
     $kale_ad = 0;
     if (have_posts()) {
-      while (have_posts()):
-        the_post(); ?>
-    <?php if ($kale_i % 3 == 0) { ?>
-    <div class="row" data-fluid=".entry-title"><?php } ?>
+        while (have_posts()):
+            the_post(); ?>
+    <?php if (
+      $kale_i % 3 ==
+       0
+      ) { ?><div class="row" data-fluid=".entry-title"><?php } ?>
       <div class="col-md-4"><?php
       $kale_entry = 'small';
       include locate_template('parts/entry.php');
       $kale_i++;
-      ?>
-      </div>
-      <?php if ($kale_i % 3 == 0) { ?>
-    </div><?php } ?>
+      ?></div>
+      <?php if ($kale_i % 3 == 0) { ?></div><?php } ?>
     <?php
-      endwhile;
+        endwhile;
     }
     ?>
 
@@ -53,16 +57,16 @@ if ($kale_blog_feed_category_sidebar_show == 0) { ?>
   <?php if (get_next_posts_link() || get_previous_posts_link()) { ?>
   <hr />
   <div class="pagination-blog-feed">
-    <?php if (get_next_posts_link()) { ?>
-    <div class="previous_posts"><?php next_posts_link(
-      __('Previous Posts', 'kale')
-    ); ?>
-    </div><?php } ?>
-    <?php if (get_previous_posts_link()) { ?>
-    <div class="next_posts"><?php previous_posts_link(
-      __('Next Posts', 'kale')
-    ); ?>
-    </div><?php } ?>
+    <?php if (
+          get_next_posts_link()
+          ) { ?><div class="previous_posts"><?php next_posts_link(
+        __('Previous Posts', 'kale')
+    ); ?></div><?php } ?>
+    <?php if (
+      get_previous_posts_link()
+      ) { ?><div class="next_posts"><?php previous_posts_link(
+        __('Next Posts', 'kale')
+    ); ?></div><?php } ?>
   </div>
   <?php } ?>
 </div>
@@ -84,4 +88,4 @@ if ($kale_blog_feed_category_sidebar_show == 0) { ?>
 <?php }
 ?>
 
-<?php get_footer();
+<?php get_footer(); ?>
