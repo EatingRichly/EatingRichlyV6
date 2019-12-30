@@ -111,3 +111,9 @@ add_action('wp_enqueue_scripts', 'kale_slider', 15);
 
 // Google native lazy load do not load JS
 add_filter('native_lazyload_fallback_script_enabled', '__return_false');
+
+// Removing Jetpack CSS
+// 2019-12-30 11:17:35
+// https://css-tricks.com/snippets/wordpress/removing-jetpack-css/
+add_filter( 'jetpack_sharing_counts', '__return_false', 99 );
+add_filter( 'jetpack_implode_frontend_css', '__return_false', 99 );
