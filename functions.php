@@ -98,6 +98,8 @@ function eating_richly_WI_dequeue_script()
   wp_dequeue_script('font-awesome'); // remove kale scripts
   wp_dequeue_script('kirki-fontawesome-font'); // remove kale scripts
   wp_dequeue_script('devicepx'); // Remove jetpack js
+  wp_dequeue_script('kale-js'); // Remove Kale-js 2020-01-07 16:41:39
+  wp_dequeue_script('kale-pinterest'); // Remove Kale Pinterest Share 2020-01-07 16:41:41
 }
 
 add_action('wp_print_scripts', 'eating_richly_WI_dequeue_script', 100);
