@@ -121,14 +121,3 @@ add_filter( 'jetpack_sharing_counts', '__return_false', 99 );
 add_filter( 'jetpack_implode_frontend_css', '__return_false', 99 );
 
 // Search form add label
-function kale_get_nav_search_item()
-{
-  return '<li class="search">
-        <a href="javascript:;" id="toggle-main_search" data-toggle="dropdown"><i class="fa fa-search"></i></a>
-        <div class="dropdown-menu main_search">
-            <form name="main_search" method="get" action="' . esc_url(home_url('/')) . '">
-                <input type="text" name="s" class="form-control" placeholder="' . __('Type here', 'kale') . '" />
-            </form>
-        </div>
-    </li>';
-}
