@@ -6,8 +6,8 @@ Author: Eric Johnson
 Author URI: https://eatingrichly.com/about/#Eric
 Description: Eating Richly V6
 Tags: one-column,two-columns,three-columns,right-sidebar,grid-layout,flexible-header,custom-background,custom-colors,custom-header,custom-menu,featured-images,footer-widgets,full-width-template,theme-options,threaded-comments,translation-ready,food-and-drink
-Version: 6.5.2
-Updated: 2020-01-07 16:47:36
+Version: 6.5.3
+Updated: 2020-05-23 09:44:33
 */
 /* Wired Style Links */
 /* https://wordpress.org/support/topic/how-to-change-color-of-links-inside-post-only */
@@ -120,4 +120,20 @@ Updated: 2020-01-07 16:47:36
 #main_menu {
   display: inherit;
 }
-/* Show menu after page load */
+/* / Show menu after page load */
+/* Fix iframe embeds */
+/* https://github.com/WordPress/gutenberg/issues/8383#issuecomment-531559102 */
+figure.wp-block-embed.is-type-video {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /*16:9*/
+}
+figure.wp-block-embed.is-type-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+/* / Fix iframe embeds */
