@@ -105,19 +105,6 @@ function eating_richly_WI_dequeue_script()
 
 add_action('wp_print_scripts', 'eating_richly_WI_dequeue_script', 100);
 
-// empty function to override owl-carousel insert from parent functions
-// function kale_slider()
-// {
-//   // This function is intentionally left blank.
-// }
-// add_action('wp_enqueue_scripts', 'kale_slider', 15);
-
-//   function kale_custom_fonts()
-//   {
-// 	    // This function is intentionally left blank.
-//   }
-// add_action('wp_head', 'kale_custom_fonts', 97);
-
 function remove_kaleparent_function()
 {
   remove_action('wp_head', 'kale_custom_fonts', 97);
