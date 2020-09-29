@@ -137,3 +137,7 @@ figure.wp-block-embed.is-type-video iframe {
   height: 100%;
 }
 /* / Fix iframe embeds */
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+}
