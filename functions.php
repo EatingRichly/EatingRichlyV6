@@ -105,6 +105,7 @@ function eating_richly_WI_dequeue_script()
 
 add_action('wp_print_scripts', 'eating_richly_WI_dequeue_script', 100);
 
+// remove parent functions https://code.tutsplus.com/tutorials/a-guide-to-overriding-parent-theme-functions-in-your-child-theme--cms-22623
 function remove_kaleparent_function()
 {
   remove_action('wp_head', 'kale_custom_fonts', 97);
