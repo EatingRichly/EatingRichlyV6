@@ -1,4 +1,5 @@
 <?php
+
 // Proper Child Theme
 // https://gist.github.com/lyrathemes/7f5c791b7351b7cadd7ab9faaba0b204
 add_action('wp_enqueue_scripts', 'kale_child_enqueue_styles');
@@ -105,11 +106,24 @@ function eating_richly_WI_dequeue_script()
 add_action('wp_print_scripts', 'eating_richly_WI_dequeue_script', 100);
 
 // empty function to override owl-carousel insert from parent functions
-function kale_slider()
+// function kale_slider()
+// {
+//   // This function is intentionally left blank.
+// }
+// add_action('wp_enqueue_scripts', 'kale_slider', 15);
+
+//   function kale_custom_fonts()
+//   {
+// 	    // This function is intentionally left blank.
+//   }
+// add_action('wp_head', 'kale_custom_fonts', 97);
+
+function remove_kaleparent_function()
 {
-  // This function is intentionally left blank.
+  remove_action('wp_head', 'kale_custom_fonts', 97);
+  remove_action('wp_enqueue_scripts', 'kale_slider', 15);
 }
-add_action('wp_enqueue_scripts', 'kale_slider', 15);
+add_action('wp_loaded', 'remove_kaleparent_function');
 
 // Google native lazy load do not load JS
 add_filter('native_lazyload_fallback_script_enabled', '__return_false');
