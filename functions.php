@@ -117,11 +117,11 @@ add_filter('native_lazyload_fallback_script_enabled', '__return_false');
 // Removing Jetpack CSS
 // 2019-12-30 11:17:35
 // https://css-tricks.com/snippets/wordpress/removing-jetpack-css/
-add_filter( 'jetpack_sharing_counts', '__return_false', 99 );
-add_filter( 'jetpack_implode_frontend_css', '__return_false', 99 );
+add_filter('jetpack_sharing_counts', '__return_false', 99);
+add_filter('jetpack_implode_frontend_css', '__return_false', 99);
 
 // Lazy Load Comments change button
 // 2020-07-27 12:06:41
-add_filter( 'llc_button_class', function () {
-    return 'btn-danger'; // add bootstrap button danger class
+add_filter('llc_button_class', function () {
+  return 'btn-danger'; // add bootstrap button danger class
 });
