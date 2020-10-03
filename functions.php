@@ -100,6 +100,9 @@ function eating_richly_WI_dequeue_script()
   wp_dequeue_script('devicepx'); // Remove jetpack js
   wp_dequeue_script('kale-js'); // Remove Kale-js 2020-01-07 16:41:39
   wp_dequeue_script('kale-pinterest'); // Remove Kale Pinterest Share 2020-01-07 16:41:41
+  // https://victorfont.com/deactivate-atomic-blocks-font-awesome/
+  wp_dequeue_style( 'atomic-blocks-fontawesome' );    //2020-10-03 11:32:15
+  wp_deregister_style( 'atomic-blocks-fontawesome' ); //2020-10-03 11:32:20
 }
 
 add_action('wp_print_scripts', 'eating_richly_WI_dequeue_script', 100);
